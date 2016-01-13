@@ -9,8 +9,8 @@ angular.module('myApp.controllers').controller('resume', ['$scope', function($sc
         {
           info : "Configured an enterprise level Google Analytics account for tracking multiple goals and statistics across 90+ clients."},{
           info : "Integrated Google Analytics into base framwork."},{
-          info : "Created internal FAQ webpage for business processes and procedures."},{
           info : "Implemented encrypted authentication access for security sensitive operating procedures."},{
+          info : "Created internal FAQ webpage for business processes and procedures."},{
           info : "Edited front-end web templates and minipulcoated various front end templates."}],
       img : "images/portfolio/asset.png"
 
@@ -34,12 +34,11 @@ angular.module('myApp.controllers').controller('resume', ['$scope', function($sc
       style: "chrysler",
       infoCom : [
         {
-          info : "Member of the Human Resource Systems Department"},{
-          info : "Responsible for up keep of 165 HR Kiosks located throughout Chrysler Plants"},{
           info : "Created relations with Plant IT Support to help assist in daily maintenance of kiosks."},{
+          info : "Helped in the transition of bringing all Java Web Apps in house"},{
+          info : "Responsible for up keep of 165 HR Kiosks located throughout Chrysler Plants"},{
           info : "Documented and helped resolve various issues facing HR Kiosks"},{
-          info : "Created business plans for how to compile Kiosk up time metrics for all units"},{
-          info : "Helped in the transition of bringing all Java Web Apps in house"}
+          info : "Created business plans for how to compile Kiosk up time metrics for all units"}
       ],
       img : "images/portfolio/fiat.png"
 
@@ -49,11 +48,11 @@ angular.module('myApp.controllers').controller('resume', ['$scope', function($sc
       style: "ksny",
       infoCom : [
         {
-          info : "Provide support for our Manufacturer and Retail Databases."},{
           info : "Guide both purchasers and buyers to manufacture price changes and Purchase Orders on our Software."},{
+          info : "Provide support for our Manufacturer and Retail Databases."},{
+          info : "Query results for different departments in ORACLE and MYSQL Databases."},{  
           info : "Improve methods and practices of business processes."},{
-          info : "Query results for different departments in ORACLE and MYSQL Databases."},{
-          info : "Maintain and improve our ticketing system (Service Now) to improve processes and flow with JavaScript web apps."
+          info : "Maintain and improve our ticketing system to improve processes and flow with JavaScript web apps."
         }
       ],
       img : "images/portfolio/ksny.png"
