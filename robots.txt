@@ -1,0 +1,5 @@
+# robots.txt
+User-agent: *
+Disallow: /mobile/
+Disallow: /m/
+Sitemap: http://www.raymondborkowski.com/sitemap.xml
