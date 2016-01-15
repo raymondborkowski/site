@@ -1,0 +1,2 @@
+angular.module('myApp.controllers').controller('contact',['$scope',function($scope){$scope.title="contact";$scope.blurb="Contact me and I will make every effort to reach you as soon as possible."
+$scope.info=[{img:"images/phone.png",name:"phone",glyph:"phone"},{img:"images/email.png",name:"email",glyph:"envelope"},{img:"images/location.png",name:"location",glyph:"map-marker"}];$scope.names=[{name:"name",type:"text"},{name:"email",type:"email"}]}]);
