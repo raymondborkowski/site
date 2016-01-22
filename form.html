@@ -1,0 +1,800 @@
+<div id="marathon" class="container-fluid"  ng-controller="marathon">
+	  <div class="row default-spacer slideanim">
+	  <script>
+	  function FillBilling(f) {
+		  if(f.billingtoo.checked == true) {
+		    f.PaymentProfile_Address_CountryId.value = f.MailingAddress_CountryId.value;
+		    f.PaymentProfile_Address_AddressLine1.value = f.MailingAddress_AddressLine1.value;
+		    f.PaymentProfile_Address_AddressLine2.value = f.MailingAddress_AddressLine2.value;
+		    f.PaymentProfile_Address_City.value = f.MailingAddress_City.value;
+		    f.PaymentProfile_Address_StateId.value = f.MailingAddress_StateId.value;
+		    f.PaymentProfile_Address_ZipCode.value = f.MailingAddress_ZipCode.value;
+		  }
+		}
+		</script>
+	    <div class="col-sm-8">
+			<h2>2016 NYC MARATHON</h2>
+			<h4>HELP DONATE!</h4>
+			<p>After filling out this form, it will take you to FTK website to donate. It will prepopulate the form. No Information is stored on this site.</p>
+			<form name="frm" class="form-horizontal" role="form" action="https://www.runwithtfk.org/Donate/Member/32674" method="POST">
+
+			<div class="form-group">
+			    <label class="control-label col-sm-3">Donation Amount:</label>
+			    <div class="col-sm-9">
+			      <input type="number" class="form-control" id="amount" name="amount" maxlength="8" placeholder="Donation Amount"required>
+			    </div>
+			</div>
+
+			<div class="form-group">
+			    <label class="control-label col-sm-3" for="sel1">Donation Reason:</label>
+			    <div class="col-sm-9"> 
+			      	<select class="form-control" id="DonationReasonId" name="DonationReasonId" required>
+				      	<option value="">- Select donation reason -</option>
+						<option value="1">In Memory Of</option>
+						<option value="2">In Honor Of</option>
+						<option value="3">In Celebration Of</option>
+					</select>
+						<script>
+							$('#DonationReasonId').on('change',function(){
+					            if ($('#DonationReasonId').val()) {
+					            	$('#ReasonText').show();
+					            	$('#one').show();
+					        	}
+					        	else {
+					            	$('#ReasonText').hide();
+					            	$('#one').hide();
+					        	}
+							});
+						</script>
+					<input placeholder = "Enter Reason" class="form-control" id = "ReasonText" name="ReasonText" type="text" style="display: none;" value>
+			    </div>
+			</div>
+			
+			 <div id = "one" style="display: none;">
+			 <h4>Info:</h4>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Title*:</label>
+				    <div class="col-sm-9"> 
+				    	<select class="form-control" id="SalutationId" name="SalutationId" required>
+				    		<option value="">- Select Title -</option>
+							<option value="1">Mr.</option>
+							<option value="2">Ms.</option>
+							<option value="3">Mrs.</option>
+							<option value="4">Dr.</option>
+						</select>
+				    </div>
+				  </div>
+
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">First Name*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="DonorFirstName" name="DonorFirstName" placeholder="First Name" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Middle Name:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="DonorMiddleName" name="DonorMiddleName" placeholder="Middle Name">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Last Name*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="DonorLastName" name="DonorLastName" placeholder="Last Name" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">CompanyName:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="CompanyName" name="CompanyName" placeholder="CompanyName">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Email*:</label>
+				    <div class="col-sm-9">
+				    	<input type="email" class="form-control" id="DonorEmail" name="DonorEmail" placeholder="Email" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Phone Number*:</label>
+				    <div class="col-sm-3">
+				    	<select class="form-control" id="PhoneType" name="PhoneType">
+				    		<option selected="selected" value="1">Home</option>
+							<option value="2">Mobile</option>
+							<option value="3">Work</option>
+						</select>
+				    </div>
+				    <div class="col-sm-6">
+				    	<input type="text" class="form-control" id="Phone" name="Phone" placeholder="(xxx)xxx-xxxx" required>
+				    </div>
+				  </div>
+			 <h4>Mailing Info:</h4>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Country*:</label>
+				    <div class="col-sm-9"> 
+						<select  class="form-control" id="MailingAddress_CountryId" name="MailingAddress.CountryId" required>
+							<option value="">- Select country -</option>
+							<option selected="selected" value="1">United States</option>
+							<option value="2">Albania</option>
+							<option value="3">Algeria</option>
+							<option value="4">American Samoa</option>
+							<option value="5">Andorra</option>
+							<option value="6">Angola</option>
+							<option value="7">Anguilla</option>
+							<option value="8">Antigua &amp; Barbuda</option>
+							<option value="9">Argentina</option>
+							<option value="10">Armenia</option>
+							<option value="11">Aruba</option>
+							<option value="12">Australia</option>
+							<option value="13">Austria</option>
+							<option value="14">Azerbaijan</option>
+							<option value="15">Bahamas</option>
+							<option value="16">Bahrain</option>
+							<option value="17">Bangladesh</option>
+							<option value="18">Barbados</option>
+							<option value="19">Belarus</option>
+							<option value="20">Belgium</option>
+							<option value="21">Belize</option>
+							<option value="22">Benin</option>
+							<option value="23">Bermuda</option>
+							<option value="24">Bhutan</option>
+							<option value="25">Bolivia</option>
+							<option value="26">Bosnia-Herzegovina</option>
+							<option value="27">Botswana</option>
+							<option value="28">Brazil</option>
+							<option value="29">British Virgin Isl.</option>
+							<option value="30">Brunei</option>
+							<option value="31">Bulgaria</option>
+							<option value="32">Burkina Faso</option>
+							<option value="33">Burundi</option>
+							<option value="34">Cambodia</option>
+							<option value="35">Cameroon</option>
+							<option value="36">Canada</option>
+							<option value="37">Cape Verde Islands</option>
+							<option value="38">Cayman Islands</option>
+							<option value="39">Central African Republic</option>
+							<option value="40">Chad</option>
+							<option value="41">Chile</option>
+							<option value="42">Chinese Taipei</option>
+							<option value="43">Colombia</option>
+							<option value="44">Dominica</option>
+							<option value="45">Comoros</option>
+							<option value="46">Congo</option>
+							<option value="47">Cook Islands</option>
+							<option value="48">Costa Rica</option>
+							<option value="49">Croatia</option>
+							<option value="50">Cuba</option>
+							<option value="51">Cyprus</option>
+							<option value="52">Czech Republic</option>
+							<option value="53">Democ. Republic of Congo</option>
+							<option value="54">Denmark</option>
+							<option value="55">Djibouti</option>
+							<option value="56">Dominican Republic</option>
+							<option value="57">Dpr of Korea</option>
+							<option value="58">East Timor</option>
+							<option value="59">Ecuador</option>
+							<option value="60">Egypt</option>
+							<option value="61">El Salvador</option>
+							<option value="62">Equatorial Guinea</option>
+							<option value="63">Eritrea</option>
+							<option value="64">Estonia</option>
+							<option value="65">Ethiopia</option>
+							<option value="66">Fiji</option>
+							<option value="67">Finland</option>
+							<option value="68">France</option>
+							<option value="69">French Polynesia</option>
+							<option value="70">Gabon</option>
+							<option value="71">Gambia</option>
+							<option value="72">Georgia</option>
+							<option value="73">Germany</option>
+							<option value="74">Ghana</option>
+							<option value="75">Gibraltar</option>
+							<option value="77">Greece</option>
+							<option value="78">Greenland</option>
+							<option value="79">Grenada</option>
+							<option value="80">Guam</option>
+							<option value="81">Guatemala</option>
+							<option value="82">Guinea</option>
+							<option value="83">Guinea-Bissau</option>
+							<option value="84">Guyana</option>
+							<option value="85">Haiti</option>
+							<option value="86">Honduras</option>
+							<option value="87">Hong Kong</option>
+							<option value="88">Hungary</option>
+							<option value="89">Iceland</option>
+							<option value="90">India</option>
+							<option value="91">Indonesia</option>
+							<option value="92">Iraq</option>
+							<option value="93">Ireland</option>
+							<option value="94">Iran</option>
+							<option value="95">Israel</option>
+							<option value="96">Italy</option>
+							<option value="97">Ivory Coast</option>
+							<option value="98">Jamaica</option>
+							<option value="99">Japan</option>
+							<option value="100">Jordan</option>
+							<option value="101">Kazakhstan</option>
+							<option value="102">Kenya</option>
+							<option value="103">Kirghizistan</option>
+							<option value="104">Kiribati</option>
+							<option value="212">Kosovo</option>
+							<option value="105">Kuwait</option>
+							<option value="106">Laos</option>
+							<option value="107">Latvia</option>
+							<option value="108">Lebanon</option>
+							<option value="109">Lesotho</option>
+							<option value="110">Liberia</option>
+							<option value="111">Libya</option>
+							<option value="112">Liechtenstein</option>
+							<option value="113">Lithuania</option>
+							<option value="114">Luxembourg</option>
+							<option value="115">Macao</option>
+							<option value="116">Macedonia</option>
+							<option value="117">Madagascar</option>
+							<option value="118">Malawi</option>
+							<option value="119">Malaysia</option>
+							<option value="120">Maldives</option>
+							<option value="121">Mali</option>
+							<option value="122">Malta</option>
+							<option value="123">Marshall Islands</option>
+							<option value="124">Mauritania</option>
+							<option value="125">Mauritius</option>
+							<option value="126">Mexico</option>
+							<option value="127">Micronesia</option>
+							<option value="128">Moldova</option>
+							<option value="129">Monaco</option>
+							<option value="130">Mongolia</option>
+							<option value="131">Montserrat</option>
+							<option value="132">Morocco</option>
+							<option value="133">Mozambique</option>
+							<option value="134">Myanmar</option>
+							<option value="135">Namibia</option>
+							<option value="136">Nauru</option>
+							<option value="137">Nepal</option>
+							<option value="138">Netherlands</option>
+							<option value="139">Netherlands Antilles</option>
+							<option value="140">New Zealand</option>
+							<option value="141">Nicaragua</option>
+							<option value="142">Niger</option>
+							<option value="143">Nigeria</option>
+							<option value="144">Norfolk Island</option>
+							<option value="145">Northern Mariana Islands</option>
+							<option value="146">Norway</option>
+							<option value="147">Oman</option>
+							<option value="148">Pakistan</option>
+							<option value="149">Palestine</option>
+							<option value="150">Panama</option>
+							<option value="151">Papua New Guinea</option>
+							<option value="152">Paraguay</option>
+							<option value="153">Peru</option>
+							<option value="154">Philippines</option>
+							<option value="155">Poland</option>
+							<option value="156">Portugal</option>
+							<option value="157">Peoples Rep. China</option>
+							<option value="158">Puerto Rico</option>
+							<option value="159">Qatar</option>
+							<option value="160">Palau</option>
+							<option value="161">Romania</option>
+							<option value="162">Russia</option>
+							<option value="163">Rwanda</option>
+							<option value="164">Saint Kitts &amp; Nevis</option>
+							<option value="165">Saint Lucia</option>
+							<option value="166">Saint Vincent</option>
+							<option value="167">San Marino</option>
+							<option value="168">Sao Tome E</option>
+							<option value="169">Saudi Arabia</option>
+							<option value="170">Senegal</option>
+							<option value="171">Serbia &amp; Montenegro</option>
+							<option value="172">Seychelles</option>
+							<option value="173">Sierra Leone</option>
+							<option value="174">Singapore</option>
+							<option value="175">Slovak Republic</option>
+							<option value="176">Slovenia</option>
+							<option value="177">Solomon Islands</option>
+							<option value="178">Somalia</option>
+							<option value="179">South Africa</option>
+							<option value="180">South Korea</option>
+							<option value="181">Spain</option>
+							<option value="182">Sri Lanka</option>
+							<option value="183">Sudan</option>
+							<option value="184">Surinam</option>
+							<option value="185">Swaziland</option>
+							<option value="186">Sweden</option>
+							<option value="187">Switzerland</option>
+							<option value="188">Syria</option>
+							<option value="189">Tajikistan</option>
+							<option value="190">Tanzania</option>
+							<option value="191">Thailand</option>
+							<option value="192">Togo</option>
+							<option value="193">Tonga</option>
+							<option value="194">Trinidad &amp; Tobago</option>
+							<option value="195">Tunisia</option>
+							<option value="196">Turkey</option>
+							<option value="197">Turkmenistan</option>
+							<option value="198">Turks &amp; Caicos Islands</option>
+							<option value="199">Uganda</option>
+							<option value="200">Ukraine</option>
+							<option value="201">United Arab Emirates</option>
+							<option value="76">United Kingdom</option>
+							<option value="202">Uruguay</option>
+							<option value="203">Uzbekistan</option>
+							<option value="204">Vanuatu</option>
+							<option value="205">Venezuela</option>
+							<option value="206">Vietnam</option>
+							<option value="207">Virgin Islands</option>
+							<option value="208">Western Samoa</option>
+							<option value="209">Yemen Arab Republic</option>
+							<option value="210">Zambia</option>
+							<option value="211">Zimbabwe</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Street Address*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="MailingAddress_AddressLine1" name="MailingAddress.AddressLine1" id = "PaymentProfile_Address_AddressLine1" placeholder="Street Address" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Apt., Floor, ect:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="MailingAddress_AddressLine2" name="MailingAddress.AddressLine2" placeholder="Apt., Floor, etc.">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">City*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="MailingAddress_City" name="MailingAddress.City" placeholder="City" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">State*:</label>
+				    <div class="col-sm-9"> 
+						<select class="form-control" id="MailingAddress_StateId" name="MailingAddress.StateId" required>
+							<option value="">- Select state -</option>
+							<option value="1">AL</option>
+							<option value="2">AK</option>
+							<option value="3">AZ</option>
+							<option value="4">AR</option>
+							<option value="5">CA</option>
+							<option value="6">CO</option>
+							<option value="7">CT</option>
+							<option value="8">DE</option>
+							<option value="51">DC</option>
+							<option value="9">FL</option>
+							<option value="10">GA</option>
+							<option value="11">HI</option>
+							<option value="12">ID</option>
+							<option value="13">IL</option>
+							<option value="14">IN</option>
+							<option value="15">IA</option>
+							<option value="16">KS</option>
+							<option value="17">KY</option>
+							<option value="18">LA</option>
+							<option value="19">ME</option>
+							<option value="20">MD</option>
+							<option value="21">MA</option>
+							<option value="22">MI</option>
+							<option value="23">MN</option>
+							<option value="24">MS</option>
+							<option value="25">MO</option>
+							<option value="26">MT</option>
+							<option value="27">NE</option>
+							<option value="28">NV</option>
+							<option value="29">NH</option>
+							<option value="30">NJ</option>
+							<option value="31">NM</option>
+							<option value="32">NY</option>
+							<option value="33">NC</option>
+							<option value="34">ND</option>
+							<option value="35">OH</option>
+							<option value="36">OK</option>
+							<option value="37">OR</option>
+							<option value="38">PA</option>
+							<option value="39">RI</option>
+							<option value="40">SC</option>
+							<option value="41">SD</option>
+							<option value="42">TN</option>
+							<option value="43">TX</option>
+							<option value="44">UT</option>
+							<option value="45">VT</option>
+							<option value="46">VA</option>
+							<option value="47">WA</option>
+							<option value="48">WV</option>
+							<option value="49">WI</option>
+							<option value="50">WY</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Zip Code*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="MailingAddress_ZipCode" name="MailingAddress.ZipCode" placeholder="Zip Code" required>
+				    </div>
+				  </div>
+			 <h4>Card Info:</h4>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Name on Card*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="PaymentProfile_NameOnCard" name="PaymentProfile.NameOnCard" placeholder="Name on Card" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Credit Card Type*:</label>
+				    <div class="col-sm-9"> 
+				    	<select class="form-control"id="PaymentProfile_CreditCardTypeId" name="PaymentProfile.CreditCardTypeId" required>
+							<option value="">- Select credit card type -</option>
+							<option value="3">American Express</option>
+							<option value="5">MasterCard</option>
+							<option value="4">Visa</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Card Number*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" maxlength="16" class="form-control" id="PaymentProfile_CardNumber" name="PaymentProfile.CardNumber" placeholder="Card Number" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Expiration Date*:</label>
+				    <div class="col-sm-4">
+						<select class="form-control" id="PaymentProfile_ExpirationDate_ExpirationMonth" name="PaymentProfile.ExpirationDate.ExpirationMonth" required>
+							<option value="">- Select Month -</option>
+							<option value="1">01, January</option>
+							<option value="2">02, February</option>
+							<option value="3">03, March</option>
+							<option value="4">04, April</option>
+							<option value="5">05, May</option>
+							<option value="6">06, June</option>
+							<option value="7">07, July</option>
+							<option value="8">08, August</option>
+							<option value="9">09, September</option>
+							<option value="10">10, October</option>
+							<option value="11">11, November</option>
+							<option value="12">12, December</option>
+						</select>
+				    </div>
+				    <div class="col-sm-5">
+				    	<select class="form-control" id="PaymentProfile_ExpirationDate_ExpirationYear" name="PaymentProfile.ExpirationDate.ExpirationYear" required>
+				    		<option value="">- Select Year -</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+							<option value="2021">2021</option>
+							<option value="2022">2022</option>
+							<option value="2023">2023</option>
+							<option value="2024">2024</option>
+							<option value="2025">2025</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3" style = "color:#b7ce01;"><img src="images/card.gif" alt="CVV" > CVV*:</label>
+				    <div class="col-sm-9">
+				    	<input type="number" class="form-control" id="PaymentProfile_Cvv" name="PaymentProfile.Cvv" placeholder="CVV" required>
+				    </div>
+				  </div>
+				  <h4>Billing Info:</h4>
+				  <input type="checkbox" name="billingtoo" onclick="FillBilling(this.form)">
+					<em>Check this box if Billing Address and Mailing Address are the same.</em>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Country*:</label>
+				    <div class="col-sm-9"> 
+						<select  class="form-control" id="PaymentProfile_Address_CountryId" name="PaymentProfile.Address.CountryId" required>
+							<option value="">- Select country -</option>
+							<option selected="selected" value="1">United States</option>
+							<option value="2">Albania</option>
+							<option value="3">Algeria</option>
+							<option value="4">American Samoa</option>
+							<option value="5">Andorra</option>
+							<option value="6">Angola</option>
+							<option value="7">Anguilla</option>
+							<option value="8">Antigua &amp; Barbuda</option>
+							<option value="9">Argentina</option>
+							<option value="10">Armenia</option>
+							<option value="11">Aruba</option>
+							<option value="12">Australia</option>
+							<option value="13">Austria</option>
+							<option value="14">Azerbaijan</option>
+							<option value="15">Bahamas</option>
+							<option value="16">Bahrain</option>
+							<option value="17">Bangladesh</option>
+							<option value="18">Barbados</option>
+							<option value="19">Belarus</option>
+							<option value="20">Belgium</option>
+							<option value="21">Belize</option>
+							<option value="22">Benin</option>
+							<option value="23">Bermuda</option>
+							<option value="24">Bhutan</option>
+							<option value="25">Bolivia</option>
+							<option value="26">Bosnia-Herzegovina</option>
+							<option value="27">Botswana</option>
+							<option value="28">Brazil</option>
+							<option value="29">British Virgin Isl.</option>
+							<option value="30">Brunei</option>
+							<option value="31">Bulgaria</option>
+							<option value="32">Burkina Faso</option>
+							<option value="33">Burundi</option>
+							<option value="34">Cambodia</option>
+							<option value="35">Cameroon</option>
+							<option value="36">Canada</option>
+							<option value="37">Cape Verde Islands</option>
+							<option value="38">Cayman Islands</option>
+							<option value="39">Central African Republic</option>
+							<option value="40">Chad</option>
+							<option value="41">Chile</option>
+							<option value="42">Chinese Taipei</option>
+							<option value="43">Colombia</option>
+							<option value="44">Dominica</option>
+							<option value="45">Comoros</option>
+							<option value="46">Congo</option>
+							<option value="47">Cook Islands</option>
+							<option value="48">Costa Rica</option>
+							<option value="49">Croatia</option>
+							<option value="50">Cuba</option>
+							<option value="51">Cyprus</option>
+							<option value="52">Czech Republic</option>
+							<option value="53">Democ. Republic of Congo</option>
+							<option value="54">Denmark</option>
+							<option value="55">Djibouti</option>
+							<option value="56">Dominican Republic</option>
+							<option value="57">Dpr of Korea</option>
+							<option value="58">East Timor</option>
+							<option value="59">Ecuador</option>
+							<option value="60">Egypt</option>
+							<option value="61">El Salvador</option>
+							<option value="62">Equatorial Guinea</option>
+							<option value="63">Eritrea</option>
+							<option value="64">Estonia</option>
+							<option value="65">Ethiopia</option>
+							<option value="66">Fiji</option>
+							<option value="67">Finland</option>
+							<option value="68">France</option>
+							<option value="69">French Polynesia</option>
+							<option value="70">Gabon</option>
+							<option value="71">Gambia</option>
+							<option value="72">Georgia</option>
+							<option value="73">Germany</option>
+							<option value="74">Ghana</option>
+							<option value="75">Gibraltar</option>
+							<option value="77">Greece</option>
+							<option value="78">Greenland</option>
+							<option value="79">Grenada</option>
+							<option value="80">Guam</option>
+							<option value="81">Guatemala</option>
+							<option value="82">Guinea</option>
+							<option value="83">Guinea-Bissau</option>
+							<option value="84">Guyana</option>
+							<option value="85">Haiti</option>
+							<option value="86">Honduras</option>
+							<option value="87">Hong Kong</option>
+							<option value="88">Hungary</option>
+							<option value="89">Iceland</option>
+							<option value="90">India</option>
+							<option value="91">Indonesia</option>
+							<option value="92">Iraq</option>
+							<option value="93">Ireland</option>
+							<option value="94">Iran</option>
+							<option value="95">Israel</option>
+							<option value="96">Italy</option>
+							<option value="97">Ivory Coast</option>
+							<option value="98">Jamaica</option>
+							<option value="99">Japan</option>
+							<option value="100">Jordan</option>
+							<option value="101">Kazakhstan</option>
+							<option value="102">Kenya</option>
+							<option value="103">Kirghizistan</option>
+							<option value="104">Kiribati</option>
+							<option value="212">Kosovo</option>
+							<option value="105">Kuwait</option>
+							<option value="106">Laos</option>
+							<option value="107">Latvia</option>
+							<option value="108">Lebanon</option>
+							<option value="109">Lesotho</option>
+							<option value="110">Liberia</option>
+							<option value="111">Libya</option>
+							<option value="112">Liechtenstein</option>
+							<option value="113">Lithuania</option>
+							<option value="114">Luxembourg</option>
+							<option value="115">Macao</option>
+							<option value="116">Macedonia</option>
+							<option value="117">Madagascar</option>
+							<option value="118">Malawi</option>
+							<option value="119">Malaysia</option>
+							<option value="120">Maldives</option>
+							<option value="121">Mali</option>
+							<option value="122">Malta</option>
+							<option value="123">Marshall Islands</option>
+							<option value="124">Mauritania</option>
+							<option value="125">Mauritius</option>
+							<option value="126">Mexico</option>
+							<option value="127">Micronesia</option>
+							<option value="128">Moldova</option>
+							<option value="129">Monaco</option>
+							<option value="130">Mongolia</option>
+							<option value="131">Montserrat</option>
+							<option value="132">Morocco</option>
+							<option value="133">Mozambique</option>
+							<option value="134">Myanmar</option>
+							<option value="135">Namibia</option>
+							<option value="136">Nauru</option>
+							<option value="137">Nepal</option>
+							<option value="138">Netherlands</option>
+							<option value="139">Netherlands Antilles</option>
+							<option value="140">New Zealand</option>
+							<option value="141">Nicaragua</option>
+							<option value="142">Niger</option>
+							<option value="143">Nigeria</option>
+							<option value="144">Norfolk Island</option>
+							<option value="145">Northern Mariana Islands</option>
+							<option value="146">Norway</option>
+							<option value="147">Oman</option>
+							<option value="148">Pakistan</option>
+							<option value="149">Palestine</option>
+							<option value="150">Panama</option>
+							<option value="151">Papua New Guinea</option>
+							<option value="152">Paraguay</option>
+							<option value="153">Peru</option>
+							<option value="154">Philippines</option>
+							<option value="155">Poland</option>
+							<option value="156">Portugal</option>
+							<option value="157">Peoples Rep. China</option>
+							<option value="158">Puerto Rico</option>
+							<option value="159">Qatar</option>
+							<option value="160">Palau</option>
+							<option value="161">Romania</option>
+							<option value="162">Russia</option>
+							<option value="163">Rwanda</option>
+							<option value="164">Saint Kitts &amp; Nevis</option>
+							<option value="165">Saint Lucia</option>
+							<option value="166">Saint Vincent</option>
+							<option value="167">San Marino</option>
+							<option value="168">Sao Tome E</option>
+							<option value="169">Saudi Arabia</option>
+							<option value="170">Senegal</option>
+							<option value="171">Serbia &amp; Montenegro</option>
+							<option value="172">Seychelles</option>
+							<option value="173">Sierra Leone</option>
+							<option value="174">Singapore</option>
+							<option value="175">Slovak Republic</option>
+							<option value="176">Slovenia</option>
+							<option value="177">Solomon Islands</option>
+							<option value="178">Somalia</option>
+							<option value="179">South Africa</option>
+							<option value="180">South Korea</option>
+							<option value="181">Spain</option>
+							<option value="182">Sri Lanka</option>
+							<option value="183">Sudan</option>
+							<option value="184">Surinam</option>
+							<option value="185">Swaziland</option>
+							<option value="186">Sweden</option>
+							<option value="187">Switzerland</option>
+							<option value="188">Syria</option>
+							<option value="189">Tajikistan</option>
+							<option value="190">Tanzania</option>
+							<option value="191">Thailand</option>
+							<option value="192">Togo</option>
+							<option value="193">Tonga</option>
+							<option value="194">Trinidad &amp; Tobago</option>
+							<option value="195">Tunisia</option>
+							<option value="196">Turkey</option>
+							<option value="197">Turkmenistan</option>
+							<option value="198">Turks &amp; Caicos Islands</option>
+							<option value="199">Uganda</option>
+							<option value="200">Ukraine</option>
+							<option value="201">United Arab Emirates</option>
+							<option value="76">United Kingdom</option>
+							<option value="202">Uruguay</option>
+							<option value="203">Uzbekistan</option>
+							<option value="204">Vanuatu</option>
+							<option value="205">Venezuela</option>
+							<option value="206">Vietnam</option>
+							<option value="207">Virgin Islands</option>
+							<option value="208">Western Samoa</option>
+							<option value="209">Yemen Arab Republic</option>
+							<option value="210">Zambia</option>
+							<option value="211">Zimbabwe</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Street Address*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="PaymentProfile_Address_AddressLine1" name="PaymentProfile.Address.AddressLine1" placeholder="Street Address" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Apt., Floor, ect:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="PaymentProfile_Address_AddressLine2" name="PaymentProfile.Address.AddressLine2" placeholder="Apt., Floor, etc.">
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">City*:</label>
+				    <div class="col-sm-9">
+				    	<input type="text" class="form-control" id="PaymentProfile_Address_City" name="PaymentProfile.Address.City" placeholder="City" required>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">State*:</label>
+				    <div class="col-sm-9"> 
+						<select class="form-control" id="PaymentProfile_Address_StateId" name="PaymentProfile.Address.StateId" required>
+							<option value="">- Select state -</option>
+							<option value="1">AL</option>
+							<option value="2">AK</option>
+							<option value="3">AZ</option>
+							<option value="4">AR</option>
+							<option value="5">CA</option>
+							<option value="6">CO</option>
+							<option value="7">CT</option>
+							<option value="8">DE</option>
+							<option value="51">DC</option>
+							<option value="9">FL</option>
+							<option value="10">GA</option>
+							<option value="11">HI</option>
+							<option value="12">ID</option>
+							<option value="13">IL</option>
+							<option value="14">IN</option>
+							<option value="15">IA</option>
+							<option value="16">KS</option>
+							<option value="17">KY</option>
+							<option value="18">LA</option>
+							<option value="19">ME</option>
+							<option value="20">MD</option>
+							<option value="21">MA</option>
+							<option value="22">MI</option>
+							<option value="23">MN</option>
+							<option value="24">MS</option>
+							<option value="25">MO</option>
+							<option value="26">MT</option>
+							<option value="27">NE</option>
+							<option value="28">NV</option>
+							<option value="29">NH</option>
+							<option value="30">NJ</option>
+							<option value="31">NM</option>
+							<option value="32">NY</option>
+							<option value="33">NC</option>
+							<option value="34">ND</option>
+							<option value="35">OH</option>
+							<option value="36">OK</option>
+							<option value="37">OR</option>
+							<option value="38">PA</option>
+							<option value="39">RI</option>
+							<option value="40">SC</option>
+							<option value="41">SD</option>
+							<option value="42">TN</option>
+							<option value="43">TX</option>
+							<option value="44">UT</option>
+							<option value="45">VT</option>
+							<option value="46">VA</option>
+							<option value="47">WA</option>
+							<option value="48">WV</option>
+							<option value="49">WI</option>
+							<option value="50">WY</option>
+						</select>
+				    </div>
+				  </div>
+				  <div class="form-group">
+				    <label class="control-label col-sm-3">Zip Code*:</label>
+				    <div class="col-sm-9">
+				    	<input type="number" class="form-control" id="PaymentProfile_Address_ZipCode" name="PaymentProfile.Address.ZipCode" placeholder="Zip Code" required>
+				    </div>
+				  </div>
+			 </div>
+			 <div class="col-sm-3"></div>
+			 <div class="col-sm-9">
+			 	<button type="submit" class="btn btn-primary btn-lg btn-block"value="Submit Button">Submit Donation</button>
+			 </div>
+			</form>
+	    </div>
+<div class="col-sm-4">
+
+</div>
+
+
+	  </div>
+	</div>
+
