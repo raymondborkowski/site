@@ -1,0 +1,26 @@
+	<div id="github" class="container-fluid text-center  bg-grey" ng-controller="marathons">
+		<div class="row default-spacer slideanim">
+		  	<h2>M{{title}}/h2>
+		  	<h4>((subtitle))</h4>
+		  	<br>
+		  	<div class="row slideanim">
+			    <div class="col-sm-4" ng-repeat="x in github | limitTo:3:0">
+			    	<a href = "{{x.url}}">
+			        	<img ng-src="{{x.img}}" alt="{{x.name}}" width="59" height="59" class="twitterbird"> 
+			      	</a>
+			      	<h4>{{x.name | uppercase}}</h4>
+			      	<p>{{x.comments}}</p>
+			    </div>
+		  	</div>
+			<br><br>
+			<div class="row slideanim">
+			    <div class="col-sm-4" ng-repeat="x in github | limitTo:6:3">
+			    	<a href = "{{x.url}}">
+			        	<img ng-src="{{x.img}}" alt="{{x.name}}" width="59" height="59" class="twitterbird">
+			      	</a>
+			      	<h4>{{x.name | uppercase}}</h4>
+			      	<p>{{x.comments}}</p>
+			    </div>
+			</div>
+		</div>
+	</div>

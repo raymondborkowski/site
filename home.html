@@ -70,6 +70,18 @@
    }
    #jumboHeader{color:#fff; background-attachment: fixed;}.icon-fakebook{background-image:url(images/github/fakebook.png);background-position:center center}span.glyphicon-download{font-size:1em}div.img-div{height:200px;width:200px;overflow:hidden;border-radius:50%}.circle-image{width:100%;height:300px;border-radius:50%;background-image:url(images/bobo.jpg);display:block;background-position:85% 25%}.twitterbird{border:none;margin:0 auto}.twitterbird:hover{-webkit-transform:scale(1.2);-moz-transform:scale(1.2);-o-transform:scale(1.2);transform:scale(1.2);transition:all .3s;-webkit-transition:all .3s}.carousel-inner>.item>a>img,.carousel-inner>.item>img{width:40%;margin:auto}.container-fluid {padding: 30px 30px;}.default-spacer{margin-left:10px;margin-right:0px;}.label{color:transparent;}.resumeHeader{color:white;}
 		.carousel-inner > .item > img,.carousel-inner > .item > a > img {width: 40%;margin: auto;}
+		#panel, #flip {
+    padding: 5px;
+    text-align: center;
+    background-color: #e5eecc;
+    border: solid 1px #c3c3c3;
+}
+
+#panel {
+    padding: 50px;
+    display: none;
+}
+ .modal{position:fixed;top:50px;right:0;bottom:0;left:0;z-index:1050;display:none;overflow:hidden;-webkit-overflow-scrolling:touch;outline:0}
 	</style>
 <!--		<script>
     $(function(){
@@ -175,10 +187,56 @@
 		</div>
 	</div>
 
+	<div id="marathon" class="container-fluid text-center slideanim bg-grey" ng-controller="marathons">
+		<div class="row default-spacer slideanim">
+		  	<h1>{{ title | uppercase}}</h1>
+		  	<a data-toggle="popover" data-placement="bottom"  data-trigger="hover" data-content="{{ info }}">{{ subtitle | uppercase}}</a>
+		  	<br>
+		  	<div class="row">
+			    <div class="col-sm-6">
+			    	<h5 ng-repeat="x in time | limitTo:5:0">
+			          <a data-toggle="modal" data-target="#myModal">{{x.month | uppercase}}</a><br>
+			    	</h5>
+			    	  <div class="modal fade" id="myModal" role="dialog">
 
-	<div id="marathon" class = "slideanim">
-	<br><br><br><br><p></p><button type="button" class="btn btn-primary btn-block btn-lg" onclick="location.href='https://www.runwithtfk.org/Donate/Member/32674';">WANT TO DONATE FOR MY MARATHON CAUSE?!</button><br><br><br><br>
+
+
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a small modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+			    </div>
+			    <div class="col-sm-6">
+			    	<h5 ng-repeat="x in time | limitTo:5:5">
+			          <a>{{x.month | uppercase}}</a><br>
+			    	</h5>
+			    </div>
+			    <div class="col-sm-12">
+			    	<h5 ng-repeat="x in time | limitTo:10:10">
+			          <a>{{x.month | uppercase}}</a><br>
+			    	</h5>
+			    </div>
+			</div>
+		</div>
+		<p></p><button type="button" class="btn btn-primary btn-block btn-lg" onclick="location.href='https://www.runwithtfk.org/Donate/Member/32674';">WANT TO DONATE FOR MY MARATHON CAUSE?!</button><br><br><br><br>
 	</div>
+
+
+
+
 <!--id="test"-->
 
 	<div id="skills" class="container-fluid" ng-controller="skills">
@@ -189,6 +247,7 @@
 	    <div class="col-sm-8">
 			<h2>Raymond's Interests and Skills</h2><br>
 			<h4>When not at work, Raymond really enjoys spending his free time relaxing while still learning. He is currently enrolled in many different online courses through Coursera<small>&copy;</small>, CodeAcademy, CodeSchool, and NodeSchool.io. Future intersts in learning are <code ng-repeat="x in learn">{{x.language | uppercase}}{{$last ? '' : ($index==x.language-2) ? ' and ' : ', '}}</code>. Please see below for lists of strenghts 10/10:</h4><br>
+
 			<div class="row">
 			    <div class="col-sm-6"  >
 			    	<h5 ng-repeat="x in languages | limitTo:6:0">
@@ -383,7 +442,15 @@
 		        }
 		    });
 		  });
-		})
+		});
+$(document).ready(function(){
+    $("#flip").click(function(){
+        $("#panel").slideToggle("slow");
+    });
+});
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
 	</script>
 
 	<script type="text/javascript">
@@ -399,6 +466,7 @@
     <script type="text/javascript" src="js/app.js"></script>
     <!-- Controllers -->
      <script type="text/javascript" src="js/menu.js"></script>
+     <script type="text/javascript" src="js/marathon.js"></script>
     <script type="text/javascript" src="js/resume.js"></script>
    <script type="text/javascript" src="js/mainController.js"></script>
     <script type="text/javascript" src="js/github.js"></script>
