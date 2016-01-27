@@ -2,4 +2,4 @@
 User-agent: *
 Disallow: /mobile/
 Disallow: /m/
-Sitemap: http://www.raymondborkowski.com/sitemap.xml
+Sitemap: https://www.raymondborkowski.com/sitemap.xml
